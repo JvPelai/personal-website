@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    container_name: personal-portfolio.postgres
+    ports:
+      - 5439:5432
+    environment:
+      - POSTGRES_DB=portfolio-dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
