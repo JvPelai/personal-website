@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Profile />
+      <Profile />
       <DarkModeSwitch />
       <footer className={styles.footer}>
         <a
