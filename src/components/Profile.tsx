@@ -1,21 +1,48 @@
-import { Heading, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  ResponsiveValue,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import Image from 'next/image';
-import profileImage from '../../public/assets/profile.jpg';
 import styles from '../styles/main.module.css';
+import profileImage from '../../public/assets/profile.jpg';
+
 const Profile = () => {
+  const profileSectionSize = useBreakpointValue({
+    base: 'sm',
+    sm: '3sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl',
+  });
+
+  const flexDirectionBreakpoint: ResponsiveValue<any> = useBreakpointValue({
+    base: 'column',
+    sm: 'row',
+  });
   return (
     <section>
-      <div className={styles.profile}>
+      <Box
+        display="flex"
+        flexDirection={flexDirectionBreakpoint}
+        justifyContent="center"
+        padding="2em"
+        margin="2em"
+        size={profileSectionSize}
+      >
         <Image
-          priority
           src={profileImage}
           alt="João Pelai"
-          width={164}
-          height={164}
+          width="164px"
+          height="164px"
+          className={styles.profileImage}
         />
 
-        <Stack className={styles.profileDescription}>
-          <Heading size="lg">
+        <Stack margin="1em">
+          <Heading fontSize={profileSectionSize}>
             Hi there! My name is João, and I&apos;m Software Engineer.
           </Heading>
           <Text>
@@ -24,7 +51,7 @@ const Profile = () => {
             <a href="https://www.linkedin.com/in/jvpelai/">Linkedin</a>.
           </Text>
         </Stack>
-      </div>
+      </Box>
     </section>
   );
 };

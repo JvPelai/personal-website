@@ -4,7 +4,8 @@
   padding: 1em;
   margin: 1em;
 }
-
-.profileDescription {
-  margin: 1em;
+.profileImage {
+  border-radius: 9999px;
+  max-width: 164px;
+  max-heigth: 164px;
 }
