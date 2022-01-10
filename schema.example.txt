@@ -1,0 +1,11 @@
+{
+  user(login: "JvPelai") {
+    repositories(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
+      nodes {
+        name
+        url
+        description
+      }
+    }
+  }
+}
