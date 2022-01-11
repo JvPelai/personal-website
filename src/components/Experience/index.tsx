@@ -8,10 +8,10 @@ import {
   AccordionPanel,
   AccordionItem,
   AccordionIcon,
+  Text,
 } from '@chakra-ui/react';
-import { IProfileProps } from '../Profile';
 
-const Experience = (props: IProfileProps) => {
+const Experience = () => {
   const experiences = [
     {
       title: 'Full Stack Engineer',
@@ -28,23 +28,23 @@ const Experience = (props: IProfileProps) => {
     },
   ];
 
-  const { profileSectionSize } = props;
   return (
     <Box>
       <Stack>
-        <Heading fontSize={profileSectionSize}>Work Experience</Heading>
+        <Heading>Work Experience</Heading>
 
         <Accordion allowMultiple allowToggle>
           {experiences.map((xp) => {
             return (
               <AccordionItem key={xp.title}>
                 <AccordionButton>
-                  <h1>{xp.title}</h1>
+                  <Text>
+                    {xp.title}, {xp.company} - {xp.time}
+                  </Text>
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel>
-                  {xp.company} - {xp.time}
-                  <p>{xp.description}</p>
+                  <Text>{xp.description}</Text>
                 </AccordionPanel>
               </AccordionItem>
             );

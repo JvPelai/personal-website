@@ -1,13 +1,11 @@
 import { Divider, Heading, Text, Box, Stack } from '@chakra-ui/react';
-import { IProfileProps } from '../Profile';
 
-const About = (props: IProfileProps) => {
-  const { profileSectionSize } = props;
+const About = () => {
   return (
     <Box>
       <Stack>
-        <Heading fontSize={profileSectionSize}>About</Heading>
-        <Text fontSize={profileSectionSize}>
+        <Heading>About</Heading>
+        <Text>
           My name is João, and I&apos;m a Brazilian Software Developer, eager to
           overcome bigger challenges, learn new technologies and frameworks, and
           build next generation solutions. I&apos;m enthusiastic about NodeJS,

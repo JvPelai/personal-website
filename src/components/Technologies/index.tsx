@@ -39,7 +39,7 @@ const Technologies = () => {
   return (
     <>
       <Stack>
-        <Heading fontSize={20}>Technologies</Heading>
+        <Heading>Technologies</Heading>
         <Text>Some of the tools I am most familiar with: </Text>
       </Stack>
       <Grid
@@ -60,7 +60,7 @@ const Technologies = () => {
                 borderColor: 'blue.800',
               }}
             >
-              <Heading size="md" my="2">
+              <Heading my="2">
                 <LinkOverlay href={tool.url}>{tool.name}</LinkOverlay>
               </Heading>
               <Text mb="3">{tool.description}</Text>

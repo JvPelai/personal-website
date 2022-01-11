@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useBreakpointValue, ResponsiveValue, Box } from '@chakra-ui/react';
-import type { NextPage } from 'next';
+import { useBreakpointValue, Box } from '@chakra-ui/react';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { About } from '../components/About';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
@@ -10,60 +10,69 @@ import { Navbar } from '../components/Navbar';
 import Profile from '../components/Profile';
 import { Projects } from '../components/Projects';
 import { Technologies } from '../components/Technologies';
+import { fetchRepos } from './api/github/repos';
 
-const Home: NextPage = () => {
-  const profileSectionSize: ResponsiveValue<any> = useBreakpointValue({
-    base: '2sm',
-    sm: '3sm',
-    md: '2md',
-    lg: '2lg',
-    xl: '2xl',
+export const getStaticProps: GetStaticProps = async () => {
+  const { repos } = await fetchRepos();
+  return {
+    props: {
+      repos,
+    },
+  };
+};
+const Home: NextPage = (props) => {
+  const profileSectionSize = useBreakpointValue({
+    base: 'sm',
+    sm: '2sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl',
+    '2xl': '4xl',
   });
 
-  const flexDirectionBreakpoint: ResponsiveValue<any> = useBreakpointValue({
+  const flexDirectionBreakpoint = useBreakpointValue({
     base: 'column',
     md: 'row',
   });
 
-  const responsivemarginX: ResponsiveValue<any> = useBreakpointValue({
+  const responsivemarginX = useBreakpointValue({
     base: '1em',
-    sm: '3em',
+    sm: '2em',
     md: '8em',
-    lg: '13em',
+    lg: '12em',
     xl: '18em',
+    '2xl': '24em',
   });
   return (
-    <body>
+    <>
       <Head>
         <title>JvPelai - Dev</title>
         <meta name="description" content="João Pelai Personal Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <body>
+        <Box
+          display="flex"
+          flexDirection="column"
+          marginX={responsivemarginX}
+          size={profileSectionSize}
+        >
+          <Navbar />
+          <Profile flexDirectionBreakpoint={flexDirectionBreakpoint} />
+          <About />
+          <Technologies />
+          <Experience />
+          <Projects
+            profileSectionSize={profileSectionSize}
+            flexDirectionBreakpoint={flexDirectionBreakpoint}
+            repos={props}
+          />
+          <Footer />
+        </Box>
 
-      <Box display="flex" flexDirection="column" marginX={responsivemarginX}>
-        <Navbar />
-        <Profile
-          profileSectionSize={profileSectionSize}
-          flexDirectionBreakpoint={flexDirectionBreakpoint}
-        />
-        <About
-          profileSectionSize={profileSectionSize}
-          flexDirectionBreakpoint={flexDirectionBreakpoint}
-        />
-        <Technologies />
-        <Experience
-          profileSectionSize={profileSectionSize}
-          flexDirectionBreakpoint={flexDirectionBreakpoint}
-        />
-        <Projects
-          profileSectionSize={profileSectionSize}
-          flexDirectionBreakpoint={flexDirectionBreakpoint}
-        />
-        <Footer />
-      </Box>
-
-      <DarkModeSwitch />
-    </body>
+        <DarkModeSwitch />
+      </body>
+    </>
   );
 };
 
