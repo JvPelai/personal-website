@@ -9,10 +9,10 @@ import {
 const Navbar = () => {
   return (
     <Box marginY={5}>
-      <Breadcrumb spacing={'1em'} separator={''}>
+      <Breadcrumb spacing={2} separator={''}>
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink
-            href="#"
+            href="#home"
             bg={useColorModeValue('gray.100', 'gray.800')}
             _hover={{
               textDecoration: 'none',
@@ -27,7 +27,7 @@ const Navbar = () => {
 
         <BreadcrumbItem>
           <BreadcrumbLink
-            href="#"
+            href="#experience"
             bg={useColorModeValue('gray.100', 'gray.800')}
             _hover={{
               textDecoration: 'none',
@@ -36,13 +36,13 @@ const Navbar = () => {
             borderRadius={5}
             padding={2}
           >
-            About
+            Experience
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
           <BreadcrumbLink
-            href="#"
+            href="#contact"
             bg={useColorModeValue('gray.100', 'gray.800')}
             _hover={{
               textDecoration: 'none',

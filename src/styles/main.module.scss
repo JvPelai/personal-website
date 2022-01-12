@@ -2,11 +2,10 @@
   width: 164px;
   height: 164px;
   padding: 1em;
+  margin: auto 1em;
+  min-width: 164px;
+  min-height: 164px;
   img {
     border-radius: 50%;
-  }
-
-  @media (max-width: 52em) {
-    margin: auto;
   }
 }

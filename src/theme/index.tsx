@@ -5,7 +5,7 @@ const breakpoints = createBreakpoints({
   md: '52em',
   lg: '64em',
   xl: '80em',
-  '2xl': '92em',
+  '2xl': '176em',
 });
 const styles = {
   global: (props: ThemeProviderProps) => ({

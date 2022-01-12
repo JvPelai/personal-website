@@ -3,6 +3,7 @@ import { useBreakpointValue, Box } from '@chakra-ui/react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { About } from '../components/About';
+import { Contact } from '../components/Contact';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Experience } from '../components/Experience';
 import { Footer } from '../components/Footer';
@@ -20,14 +21,14 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-const Home: NextPage = (props) => {
+const Home: NextPage = (props: any) => {
   const profileSectionSize = useBreakpointValue({
     base: 'sm',
-    sm: '2sm',
+    sm: 'sm',
     md: 'md',
     lg: 'lg',
     xl: 'xl',
-    '2xl': '4xl',
+    '2xl': '2xl',
   });
 
   const flexDirectionBreakpoint = useBreakpointValue({
@@ -40,8 +41,8 @@ const Home: NextPage = (props) => {
     sm: '2em',
     md: '8em',
     lg: '12em',
-    xl: '18em',
-    '2xl': '24em',
+    xl: '24em',
+    '2xl': 'auto',
   });
   return (
     <>
@@ -56,6 +57,7 @@ const Home: NextPage = (props) => {
           flexDirection="column"
           marginX={responsivemarginX}
           size={profileSectionSize}
+          maxW="976px"
         >
           <Navbar />
           <Profile flexDirectionBreakpoint={flexDirectionBreakpoint} />
@@ -67,6 +69,7 @@ const Home: NextPage = (props) => {
             flexDirectionBreakpoint={flexDirectionBreakpoint}
             repos={props}
           />
+          <Contact />
           <Footer />
         </Box>
 

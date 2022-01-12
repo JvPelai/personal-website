@@ -8,31 +8,37 @@ import {
   Text,
 } from '@chakra-ui/react';
 
+export interface ITechLink {
+  name: string;
+  description: string;
+  url: string;
+}
+
 const Technologies = () => {
-  const tools = [
+  const tools: ITechLink[] = [
     {
       name: 'Node.js',
-      description: '....',
+      description: 'Javascript runtime for building scalable applications',
       url: 'https://www.nodejs.org',
     },
     {
       name: 'Javascript',
-      description: '...',
+      description: 'Versatile programming language suited for many cases',
       url: 'https://www.javascript.info',
     },
     {
       name: 'React.js',
-      description: '...',
+      description: 'Front-end framework for building dynamic web applications',
       url: 'https://www.reactjs.org',
     },
     {
       name: 'SQL & MongoDb',
-      description: '...',
+      description: 'Databases',
       url: 'https://www.mongodb.com/',
     },
     {
       name: 'GIT & Github',
-      description: '...',
+      description: 'Version control',
       url: 'https://git-scm.com/',
     },
   ];

@@ -1,10 +1,17 @@
-import { IconButton, Stack } from '@chakra-ui/react';
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { IconButton, Stack, Text } from '@chakra-ui/react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <Stack direction="row" spacing="4" marginBottom={3}>
+    <Stack
+      direction="row"
+      spacing={1}
+      justifyContent="center"
+      alignItems="center"
+      marginBottom={3}
+    >
       <IconButton
+        variant="unstyled"
         as="a"
         href="https://www.linkedin.com/in/jvpelai/"
         aria-label="Linkedin"
@@ -12,15 +19,16 @@ const Footer = () => {
       >
         <FaLinkedin size="2em" />
       </IconButton>
-      <IconButton as="a" aria-label="GitHub" color="#171515">
+      <IconButton
+        variant="unstyled"
+        as="a"
+        href="https://github.com/JvPelai"
+        aria-label="GitHub"
+        color="gray.600"
+      >
         <FaGithub size="2em" />
       </IconButton>
-      <IconButton as="a" aria-label="Twitter" color="#00acee">
-        <FaTwitter size="2em" />
-      </IconButton>
-      <IconButton as="a" aria-label="Instagram" color="#fb3958">
-        <FaInstagram size="2em" />
-      </IconButton>
+      <Text color="gray.500">© 2022 João Vianna</Text>
     </Stack>
   );
 };

@@ -15,7 +15,7 @@ const Projects = (props: any) => {
 
   return (
     <Box>
-      <Stack height="md">
+      <Stack height="xl">
         <Heading>Side Projects</Heading>
         <Box
           overflowY="auto"

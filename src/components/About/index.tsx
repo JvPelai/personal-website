@@ -5,8 +5,8 @@ const About = () => {
     <Box>
       <Stack>
         <Heading>About</Heading>
-        <Text>
-          My name is João, and I&apos;m a Brazilian Software Developer, eager to
+        <Text maxWidth='75%' >
+          I&apos;m a Software Developer, eager to
           overcome bigger challenges, learn new technologies and frameworks, and
           build next generation solutions. I&apos;m enthusiastic about NodeJS,
           Docker and Kubernetes and my current focus is on acquiring knowledge

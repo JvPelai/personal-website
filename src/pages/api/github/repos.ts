@@ -15,6 +15,8 @@ const fetchRepos = async () => {
         repositories(
           first: 80
           orderBy: { field: CREATED_AT, direction: DESC }
+          privacy: PUBLIC
+          isFork: false
         ) {
           nodes {
             name

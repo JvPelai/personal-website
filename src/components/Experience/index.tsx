@@ -17,34 +17,35 @@ const Experience = () => {
       title: 'Full Stack Engineer',
       company: 'Fornax Tecnologia',
       time: '4 months',
-      description: `Developed, maintained and improved codebase with Javascript, Java, Relational databases, ORM's frontend technologies, Docker, Kubernetes, Kafka, AWS and other technologies relevant to development requirements in a microservice ecosystem. Wrote unit tests and integration tests for backend and frontend code.
-    Colaborated with an international agile software engineering team to deliver Quality software that serves the Client's activities and demands.`,
+      description: `Developed, maintained and improved codebase with Javascript, Java, Relational databases, ORM's, frontend technologies, Docker, Kubernetes, Kafka, AWS and other technologies relevant to development requirements in a microservice ecosystem.\n Wrote unit tests and integration tests for backend and frontend code.
+    \nColaborated with an international agile software engineering team to deliver Quality software that serves the Client's activities and demands.`,
     },
     {
       title: 'Full Stack Developer',
       company: 'Pecege',
       time: '1 year',
-      description: `Collaborated with product managers, UX designers, and quality control professionals to build digital products. Developed, maintained, and executed test scripts. Performed user requirements analysis to increase user satisfaction during rapid application development. Developed and tested defined user stories using Node.js and React.js with typescript. Performed error hunting and then utilized problem solving skills to fix bugs. Collaborated with the team in an Agile software development environment to guide project design`,
+      description: `Collaborated with product managers, UX designers, and quality control professionals to build digital products.\nDeveloped, maintained, and executed test scripts.\nPerformed user requirements analysis to increase user satisfaction during rapid application development.\nDeveloped and tested defined user stories using Node.js and React.js with typescript.\nPerformed error hunting and then utilized problem solving skills to fix bugs.\nCollaborated with the team in an Agile software development environment to guide project design`,
     },
   ];
 
   return (
     <Box>
       <Stack>
-        <Heading>Work Experience</Heading>
+        <Heading id="experience">Work Experience</Heading>
 
-        <Accordion allowMultiple allowToggle>
+        <Accordion defaultIndex={[0]} allowMultiple allowToggle>
           {experiences.map((xp) => {
             return (
               <AccordionItem key={xp.title}>
                 <AccordionButton>
-                  <Text>
+                  <Box flex="1" textAlign="left">
                     {xp.title}, {xp.company} - {xp.time}
-                  </Text>
+                  </Box>
+
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel>
-                  <Text>{xp.description}</Text>
+                  <Text maxW='75%' >{xp.description}</Text>
                 </AccordionPanel>
               </AccordionItem>
             );

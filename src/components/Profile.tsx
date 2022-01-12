@@ -1,11 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  Box,
-  Divider,
-  Heading,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Divider, Heading } from '@chakra-ui/react';
 import Image from 'next/image';
 import styles from '../styles/main.module.scss';
 
@@ -17,7 +11,11 @@ const Profile = (props: IProfileProps) => {
   const { flexDirectionBreakpoint } = props;
   return (
     <>
-      <Box display="flex" flexDirection={flexDirectionBreakpoint}>
+      <Box
+        display="flex"
+        flexDirection={flexDirectionBreakpoint}
+        alignItems="center"
+      >
         <div className={styles.profileImage}>
           <Image
             src="/assets/profile.jpg"
@@ -28,16 +26,7 @@ const Profile = (props: IProfileProps) => {
           />
         </div>
 
-        <Stack marginY="2em">
-          <Heading>
-            João Victor Pelai - Software Engineer.
-          </Heading>
-          <Text>
-            <br /> You can reach me on &nbsp;
-            <a href="https://twitter.com/JvPelai">Twitter</a> or &nbsp;
-            <a href="https://www.linkedin.com/in/jvpelai/">Linkedin</a>.
-          </Text>
-        </Stack>
+        <Heading> Hi there! I&apos;m João!</Heading>
       </Box>
       <Divider my={'1em'} />
     </>
