@@ -15,7 +15,7 @@ const Projects = (props: any) => {
 
   return (
     <Box>
-      <Stack height="xl">
+      <Stack height="xl" spacing={3}>
         <Heading>Side Projects</Heading>
         <Box
           overflowY="auto"
@@ -38,6 +38,7 @@ const Projects = (props: any) => {
                 <LinkBox
                   as="article"
                   p="5"
+                  my={2}
                   borderWidth="2px"
                   rounded="md"
                   key={repo.name}

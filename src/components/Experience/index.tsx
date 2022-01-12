@@ -33,7 +33,7 @@ const Experience = () => {
       <Stack>
         <Heading id="experience">Work Experience</Heading>
 
-        <Accordion defaultIndex={[0]} allowMultiple allowToggle>
+        <Accordion defaultIndex={[0, 1]} allowMultiple allowToggle>
           {experiences.map((xp) => {
             return (
               <AccordionItem key={xp.title}>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useBreakpointValue, Box } from '@chakra-ui/react';
+import { useBreakpointValue, Box, Stack } from '@chakra-ui/react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { About } from '../components/About';
@@ -59,7 +59,10 @@ const Home: NextPage = (props: any) => {
           size={profileSectionSize}
           maxW="976px"
         >
-          <Navbar />
+          <Stack direction="row" justifyContent='space-between' alignItems='center' >
+            <Navbar />
+            <DarkModeSwitch />
+          </Stack>
           <Profile flexDirectionBreakpoint={flexDirectionBreakpoint} />
           <About />
           <Technologies />
@@ -72,8 +75,6 @@ const Home: NextPage = (props: any) => {
           <Contact />
           <Footer />
         </Box>
-
-        <DarkModeSwitch />
       </body>
     </>
   );
