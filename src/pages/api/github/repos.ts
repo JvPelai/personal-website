@@ -38,6 +38,7 @@ const fetchRepos = async () => {
   const { data } = await client.query({
     query: GITHUB_REPOS,
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const repos = data.user.repositories.nodes.filter((r: any) => r.description);
   return { repos };
 };
